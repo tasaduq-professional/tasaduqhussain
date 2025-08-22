@@ -66,8 +66,8 @@
                 <nav class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#summary" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Summary</a>
-                        <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Skills</a>
                         <a href="#experience" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Experience</a>
+                        <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Skills</a>
                         <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Projects</a>
                         <a href="#education" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Education & Certs</a>
                     </div>
@@ -85,8 +85,8 @@
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#summary" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Summary</a>
-                <a href="#skills" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Skills</a>
                 <a href="#experience" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Experience</a>
+                <a href="#skills" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Skills</a>
                 <a href="#projects" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Projects</a>
                 <a href="#education" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Education & Certs</a>
             </div>
@@ -115,62 +115,11 @@
                 </p>
             </div>
         </section>
-
-        <section id="metrics" class="py-12 md:py-16">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-gray-800">Key Achievements</h3>
-                <p class="mt-2 text-lg text-gray-600">Explore the quantitative impact of my work through these key metrics.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center max-w-5xl mx-auto">
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
-                    <span id="years-metric" class="text-5xl font-extrabold text-amber-500">0</span>
-                    <p class="mt-2 text-lg font-semibold text-gray-700">Years of Experience</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
-                    <span id="efficiency-metric" class="text-5xl font-extrabold text-amber-500">0%</span>
-                    <p class="mt-2 text-lg font-semibold text-gray-700">Improved Test Efficiency</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
-                    <span id="manual-effort-metric" class="text-5xl font-extrabold text-amber-500">0%</span>
-                    <p class="mt-2 text-lg font-semibold text-gray-700">Reduced Manual Testing Efforts</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
-                    <span id="coverage-metric" class="text-5xl font-extrabold text-amber-500">0%</span>
-                    <p class="mt-2 text-lg font-semibold text-gray-700">Increased Test Coverage</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-12 md:py-16">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-gray-800">Technical Skills</h3>
-                <p class="mt-2 text-lg text-gray-600">This section provides an overview of my technical capabilities. You can interact with the chart and filters to explore my skills across different domains of software testing and development.</p>
-            </div>
-            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200">
-                <div class="flex flex-wrap justify-center gap-2 mb-8">
-                    <button class="skill-filter-btn active bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-semibold" data-category="all">All Skills</button>
-                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Test Automation">Test Automation</button>
-                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Languages & Frameworks">Languages & Frameworks</button>
-                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Backend & Database">Backend & Database</button>
-                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="AI & Emerging Tech">AI & Emerging Tech</button>
-                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Software Methodologies & Tools">Methodologies & Tools</button>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-                    <div class="lg:col-span-3">
-                        <div class="chart-container">
-                            <canvas id="skillsChart"></canvas>
-                        </div>
-                    </div>
-                    <div id="skills-list" class="lg:col-span-2 space-y-4">
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        
         <section id="experience" class="py-12 md:py-16">
             <div class="text-center mb-12">
                 <h3 class="text-3xl font-bold text-gray-800">Professional Experience</h3>
-                <p class="mt-2 text-lg text-gray-600">Explore my career journey through this interactive timeline. Click on any role to expand and view the key responsibilities and accomplishments associated with it.</p>
+                <p class="mt-2 text-lg text-gray-600">Explore my career journey through this interactive timeline. The details for each role will expand as you scroll to them.</p>
             </div>
             <div class="max-w-3xl mx-auto">
                 <div class="relative border-l-2 border-amber-200 ml-8 pl-8 space-y-12">
@@ -179,7 +128,7 @@
                             <h4 class="text-xl font-semibold text-gray-800">Sr. SDET, Freshworks India</h4>
                             <p class="text-sm text-gray-500">May 2021 - Present</p>
                         </div>
-                        <div class="experience-details hidden mt-4 pl-4 border-l-2 border-gray-200">
+                        <div class="experience-details mt-4 pl-4 border-l-2 border-gray-200">
                             <ul class="list-disc list-inside space-y-2 text-gray-700">
                                 <li>Led a team of automation engineers, overseeing end-to-end testing and automation processes.</li>
                                 <li>Designed, developed, and maintained a highly reliable test automation framework for UI and API, leading to an 80% improvement in test execution efficiency.</li>
@@ -234,6 +183,58 @@
                 </div>
             </div>
         </section>
+
+        <section id="metrics" class="py-12 md:py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800">Key Achievements</h3>
+                <p class="mt-2 text-lg text-gray-600">Explore the quantitative impact of my work through these key metrics.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
+                    <span id="years-metric" class="text-5xl font-extrabold text-amber-500">0</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Years of Experience</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
+                    <span id="efficiency-metric" class="text-5xl font-extrabold text-amber-500">0%</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Improved Test Efficiency</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
+                    <span id="manual-effort-metric" class="text-5xl font-extrabold text-amber-500">0%</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Reduced Manual Testing Efforts</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
+                    <span id="coverage-metric" class="text-5xl font-extrabold text-amber-500">0%</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Increased Test Coverage</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-12 md:py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800">Technical Skills</h3>
+                <p class="mt-2 text-lg text-gray-600">This section provides an overview of my technical capabilities. Click on the buttons to filter the skills list below.</p>
+            </div>
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200">
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button class="skill-filter-btn active bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-semibold" data-category="all">All Skills</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Test Automation">Test Automation</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Languages & Frameworks">Languages & Frameworks</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Backend & Database">Backend & Database</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="AI & Emerging Tech">AI & Emerging Tech</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Software Methodologies & Tools">Methodologies & Tools</button>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                    <div class="lg:col-span-3">
+                        <div class="chart-container">
+                            <canvas id="skillsChart"></canvas>
+                        </div>
+                    </div>
+                    <div id="skills-list" class="lg:col-span-2 space-y-4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         
         <section id="projects" class="py-12 md:py-16">
             <div class="text-center mb-12">
@@ -290,7 +291,7 @@
             const skillsData = {
                 'Test Automation': ['Selenium WebDriver', 'Playwright', 'TestNG', 'Jest', 'CI/CD', 'Jenkins', 'Maven', 'Testim', 'Microservices Testing', 'Katalon'],
                 'Languages & Frameworks': ['Java', 'Core Java', 'TypeScript', 'JavaScript', 'Page Object Model (POM)', 'Selenium Framework'],
-                'Backend & Database': ['REST APIs', 'PostgreSQL', 'Redis', 'Amazon S3', 'Haystack', 'Postman', 'RestAssured', 'Athena', 'Dynamo', 'SQL', 'Backend Design'],
+                'Backend & Database': ['REST APIs', 'Postman', 'RestAssured', 'PostgreSQL', 'Redis', 'Amazon S3', 'Haystack', 'Athena', 'Dynamo', 'SQL', 'Backend Design'],
                 'AI & Emerging Tech': ['Copilot', 'Cursor for Coding', 'ChatGPT', 'Gemini', 'Perplexity for queries', 'AI Agents', 'Artificial Intelligence (AI)'],
                 'Software Methodologies & Tools': ['Agile', 'Scrum', 'JIRA', 'Freshrelease', 'Test Planning', 'Test Strategy', 'Debugging', 'Code Reviews', 'Git', 'TestLink', 'Bitbucket', 'Gitlab', 'Newmonk']
             };
@@ -323,7 +324,7 @@
             const skillsListContainer = document.getElementById('skills-list');
             const filterButtons = document.querySelectorAll('.skill-filter-btn');
             const projectsContainer = document.getElementById('projects-container');
-            const experienceToggles = document.querySelectorAll('.experience-toggle');
+            const experienceDetails = document.querySelectorAll('.experience-details');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -393,33 +394,6 @@
                 skillsListContainer.appendChild(list);
             }
 
-            function updateChart(category) {
-                const chartData = (category === 'all') 
-                    ? {
-                        labels: Object.keys(skillsData),
-                        datasets: [{
-                            label: 'Number of Skills',
-                            data: Object.values(skillsData).map(arr => arr.length),
-                            backgroundColor: 'rgba(251, 191, 36, 0.6)',
-                            borderColor: 'rgba(217, 119, 6, 1)',
-                            borderWidth: 1
-                        }]
-                    }
-                    : {
-                        labels: [category],
-                        datasets: [{
-                            label: 'Number of Skills',
-                            data: [skillsData[category].length],
-                            backgroundColor: 'rgba(251, 191, 36, 0.6)',
-                            borderColor: 'rgba(217, 119, 6, 1)',
-                            borderWidth: 1
-                        }]
-                    };
-                
-                skillsChart.data = chartData;
-                skillsChart.update();
-            }
-
             function createChart() {
                 const ctx = document.getElementById('skillsChart').getContext('2d');
                 skillsChart = new Chart(ctx, {
@@ -428,7 +402,7 @@
                         labels: Object.keys(skillsData),
                         datasets: [{
                             label: 'Number of Skills',
-                            data: Object.values(skillsData).map(arr => arr.length),
+                            data: [1, 1, 1, 1, 1],
                             backgroundColor: 'rgba(251, 191, 36, 0.6)',
                             borderColor: 'rgba(217, 119, 6, 1)',
                             borderWidth: 1
@@ -454,6 +428,9 @@
                             x: {
                                 beginAtZero: true,
                                 grid: {
+                                    display: false
+                                },
+                                ticks: {
                                     display: false
                                 }
                             },
@@ -487,11 +464,23 @@
             createChart();
             renderSkillsList('all');
 
-            experienceToggles.forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    const details = toggle.nextElementSibling;
-                    details.classList.toggle('hidden');
+            const experienceObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('hidden');
+                        observer.unobserve(entry.target);
+                    }
                 });
+            }, {
+                threshold: 0.5
+            });
+
+            experienceDetails.forEach((details, index) => {
+                if (index === 0) {
+                    details.classList.remove('hidden');
+                } else {
+                    experienceObserver.observe(details);
+                }
             });
             
             mobileMenuButton.addEventListener('click', () => {
@@ -504,7 +493,7 @@
                 threshold: 0.5
             };
 
-            const observer = new IntersectionObserver((entries) => {
+            const sectionObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         navLinks.forEach(link => {
@@ -518,7 +507,7 @@
             }, observerOptions);
 
             sections.forEach(section => {
-                observer.observe(section);
+                sectionObserver.observe(section);
             });
             
             navLinks.forEach(link => {
