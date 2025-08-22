@@ -68,6 +68,7 @@
                         <a href="#summary" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Summary</a>
                         <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Skills</a>
                         <a href="#experience" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Experience</a>
+                        <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Projects</a>
                         <a href="#education" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Education & Certs</a>
                     </div>
                 </nav>
@@ -86,6 +87,7 @@
                 <a href="#summary" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Summary</a>
                 <a href="#skills" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Skills</a>
                 <a href="#experience" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Experience</a>
+                <a href="#projects" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Projects</a>
                 <a href="#education" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Education & Certs</a>
             </div>
         </div>
@@ -109,8 +111,33 @@
             <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-200">
                 <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Professional Summary</h3>
                 <p class="text-lg text-gray-700 leading-relaxed">
-                    Highly accomplished and result-oriented SDET professional with over 9 years of experience in web, mobile, and API automation. Proven expertise in building robust, scalable automation frameworks using Java, Selenium, and Playwright with TypeScript. Adept at leading and mentoring automation teams, defining comprehensive test strategies, and implementing CI/CD pipelines to ensure seamless DevOps integration and high-quality software delivery. Successfully improved test efficiency by 80%, reduced manual efforts by 60%, and increased test coverage to over 95% across e-commerce, logistics, and SaaS domains.
+                    Highly accomplished and result-oriented SDET professional with **10 years** of experience in web, mobile, and API automation. Proven expertise in building robust, scalable automation frameworks using Java, Selenium, and Playwright with TypeScript. Adept at leading and mentoring automation teams, defining comprehensive test strategies, and implementing CI/CD pipelines to ensure seamless DevOps integration and high-quality software delivery. Successfully improved test efficiency by 80%, reduced manual efforts by 60%, and increased test coverage to over 95% across e-commerce, logistics, and SaaS domains.
                 </p>
+            </div>
+        </section>
+
+        <section id="metrics" class="py-12 md:py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800">Key Achievements</h3>
+                <p class="mt-2 text-lg text-gray-600">Explore the quantitative impact of my work through these key metrics.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
+                    <span id="years-metric" class="text-5xl font-extrabold text-amber-500">0</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Years of Experience</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
+                    <span id="efficiency-metric" class="text-5xl font-extrabold text-amber-500">0%</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Improved Test Efficiency</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
+                    <span id="manual-effort-metric" class="text-5xl font-extrabold text-amber-500">0%</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Reduced Manual Testing Efforts</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-center items-center">
+                    <span id="coverage-metric" class="text-5xl font-extrabold text-amber-500">0%</span>
+                    <p class="mt-2 text-lg font-semibold text-gray-700">Increased Test Coverage</p>
+                </div>
             </div>
         </section>
 
@@ -207,6 +234,15 @@
                 </div>
             </div>
         </section>
+        
+        <section id="projects" class="py-12 md:py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800">Key Projects</h3>
+                <p class="mt-2 text-lg text-gray-600">Discover some of my significant projects. Click on a project to reveal more details.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" id="projects-container">
+            </div>
+        </section>
 
         <section id="education" class="py-12 md:py-16">
             <div class="text-center mb-12">
@@ -252,17 +288,90 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const skillsData = {
-                'Test Automation': ['Selenium WebDriver', 'Playwright', 'TestNG', 'Jest', 'CI/CD', 'Jenkins', 'Maven', 'Testim', 'Microservices Testing'],
-                'Languages & Frameworks': ['Java', 'Core Java', 'TypeScript', 'JavaScript', 'Page Object Model (POM)'],
-                'Backend & Database': ['REST APIs', 'PostgreSQL', 'Redis', 'Amazon S3', 'Haystack', 'Postman', 'RestAssured'],
-                'AI & Emerging Tech': ['Copilot', 'Cursor for Coding', 'ChatGPT', 'Gemini', 'Perplexity for queries'],
-                'Software Methodologies & Tools': ['Agile', 'Scrum', 'JIRA', 'Freshrelease', 'Test Planning', 'Test Strategy', 'Debugging', 'Code Reviews', 'Git']
+                'Test Automation': ['Selenium WebDriver', 'Playwright', 'TestNG', 'Jest', 'CI/CD', 'Jenkins', 'Maven', 'Testim', 'Microservices Testing', 'Katalon'],
+                'Languages & Frameworks': ['Java', 'Core Java', 'TypeScript', 'JavaScript', 'Page Object Model (POM)', 'Selenium Framework'],
+                'Backend & Database': ['REST APIs', 'PostgreSQL', 'Redis', 'Amazon S3', 'Haystack', 'Postman', 'RestAssured', 'Athena', 'Dynamo', 'SQL', 'Backend Design'],
+                'AI & Emerging Tech': ['Copilot', 'Cursor for Coding', 'ChatGPT', 'Gemini', 'Perplexity for queries', 'AI Agents', 'Artificial Intelligence (AI)'],
+                'Software Methodologies & Tools': ['Agile', 'Scrum', 'JIRA', 'Freshrelease', 'Test Planning', 'Test Strategy', 'Debugging', 'Code Reviews', 'Git', 'TestLink', 'Bitbucket', 'Gitlab', 'Newmonk']
             };
+
+            const projectsData = [
+                {
+                    title: "E-commerce Platform Automation",
+                    description: "Developed and maintained a comprehensive end-to-end automation suite for a large-scale e-commerce platform, covering user registration, product search, cart management, and checkout. Used a Java-based framework to ensure a seamless and reliable shopping experience for millions of users.",
+                    technologies: "Java, Selenium WebDriver, TestNG, Maven, PostgreSQL"
+                },
+                {
+                    title: "Logistics API Automation Framework",
+                    description: "Architected a robust API automation framework using RestAssured to validate microservices responsible for order tracking, inventory management, and shipment status. This framework reduced manual API testing time by over 70% and improved data integrity across the system.",
+                    technologies: "RestAssured, Java, Microservices, Postman, Jenkins"
+                },
+                {
+                    title: "CI/CD Pipeline Integration",
+                    description: "Led the integration of automated tests into CI/CD pipelines using Jenkins. Configured nightly builds and automated test runs to provide instant feedback on code quality and prevent regression issues, significantly accelerating the release cycle.",
+                    technologies: "Jenkins, CI/CD, Git, Java, Automation Frameworks"
+                }
+            ];
+
+            const achievementsData = [
+                { id: 'years-metric', value: 10, text: 'Years of Experience' },
+                { id: 'efficiency-metric', value: 80, text: 'Improved Test Efficiency' },
+                { id: 'manual-effort-metric', value: 60, text: 'Reduced Manual Testing Efforts' },
+                { id: 'coverage-metric', value: 95, text: 'Increased Test Coverage' }
+            ];
 
             const skillsListContainer = document.getElementById('skills-list');
             const filterButtons = document.querySelectorAll('.skill-filter-btn');
-            
+            const projectsContainer = document.getElementById('projects-container');
+            const experienceToggles = document.querySelectorAll('.experience-toggle');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const header = document.getElementById('header');
             let skillsChart;
+            
+            function renderAchievements() {
+                achievementsData.forEach(metric => {
+                    const element = document.getElementById(metric.id);
+                    let start = 0;
+                    const end = metric.value;
+                    const duration = 2000;
+                    const stepTime = 10;
+                    const steps = duration / stepTime;
+                    const increment = end / steps;
+
+                    let current = start;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= end) {
+                            clearInterval(timer);
+                            current = end;
+                        }
+                        element.textContent = `${Math.floor(current)}${metric.id === 'years-metric' ? '' : '%'}`;
+                    }, stepTime);
+                });
+            }
+
+            function renderProjects() {
+                projectsContainer.innerHTML = '';
+                projectsData.forEach((project, index) => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'bg-white p-6 rounded-xl shadow-lg border border-gray-200 cursor-pointer transition-transform transform hover:scale-105';
+                    projectCard.innerHTML = `
+                        <h4 class="text-xl font-semibold text-gray-800">${project.title}</h4>
+                        <p class="text-sm font-medium text-amber-600">${project.technologies}</p>
+                        <div class="project-details hidden mt-4 text-gray-700">
+                            <p>${project.description}</p>
+                        </div>
+                    `;
+                    projectCard.addEventListener('click', () => {
+                        const details = projectCard.querySelector('.project-details');
+                        details.classList.toggle('hidden');
+                    });
+                    projectsContainer.appendChild(projectCard);
+                });
+            }
 
             function renderSkillsList(category) {
                 skillsListContainer.innerHTML = '';
@@ -378,7 +487,6 @@
             createChart();
             renderSkillsList('all');
 
-            const experienceToggles = document.querySelectorAll('.experience-toggle');
             experienceToggles.forEach(toggle => {
                 toggle.addEventListener('click', () => {
                     const details = toggle.nextElementSibling;
@@ -386,16 +494,10 @@
                 });
             });
             
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
             
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section');
-            const header = document.getElementById('header');
-
             const observerOptions = {
                 root: null,
                 rootMargin: `-${header.offsetHeight}px`,
@@ -435,6 +537,9 @@
                     }
                 });
             });
+
+            renderAchievements();
+            renderProjects();
         });
     </script>
 </body>
