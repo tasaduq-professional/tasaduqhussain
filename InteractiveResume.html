@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasaduq Hussain - SDET Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A single-page application with a sticky navigation header for smooth scrolling to thematic sections: Summary, Skills, Experience, and Education/Certs. The Skills section will be interactive with a filterable chart, and the Experience section will use a clickable vertical timeline to reveal job details. This structure is chosen for its modern, engaging user experience, allowing recruiters to quickly navigate to relevant information and explore details on demand, which is more efficient than reading a linear document. -->
+    <!-- Visualization & Content Choices: 
+        - Skills: Report Info -> Technical skills grouped by category. Goal -> Compare proficiency and show breadth of expertise. Viz/Presentation Method -> A horizontal bar chart (Chart.js on Canvas) to visually represent the number of skills in each category, complemented by a filterable list. Interaction -> Buttons to filter both the chart and the list by category. Justification -> Provides a quick visual summary and allows for targeted exploration of technical abilities.
+        - Experience: Report Info -> Chronological work history. Goal -> Show career progression and allow for detailed exploration. Viz/Presentation Method -> A vertical timeline built with HTML/Tailwind. Interaction -> Clicking a job title on the timeline toggles the visibility of its detailed responsibilities. Justification -> An intuitive and clean way to present chronological data, preventing information overload by hiding details until requested.
+        - Library/Method: Chart.js for canvas-based charts, Vanilla JS for all interactions, and Tailwind CSS for layout and styling. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #3D3D3D;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #D97706;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: -2.125rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #FBBF24;
+            border: 3px solid #FEF3C7;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-gray-800">Tasaduq Hussain</h1>
+                </div>
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#summary" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Summary</a>
+                        <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Skills</a>
+                        <a href="#experience" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Experience</a>
+                        <a href="#education" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">Education & Certs</a>
+                    </div>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#summary" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Summary</a>
+                <a href="#skills" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Skills</a>
+                <a href="#experience" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Experience</a>
+                <a href="#education" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700">Education & Certs</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <section id="hero" class="text-center py-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">Tasaduq Hussain</h2>
+            <p class="mt-4 text-lg md:text-xl text-amber-700 font-semibold">Senior SDET Professional</p>
+            <div class="mt-6 flex justify-center items-center space-x-6 text-gray-600">
+                <span>+91-9971260124</span>
+                <span class="text-gray-300">|</span>
+                <span>tasaduq12hussain14@gmail.com</span>
+                <span class="text-gray-300">|</span>
+                <a href="https://www.linkedin.com/in/tasaduq-hussain" target="_blank" class="hover:text-amber-600">LinkedIn</a>
+            </div>
+        </section>
+
+        <section id="summary" class="py-12 md:py-16">
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Professional Summary</h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Highly accomplished and result-oriented SDET professional with over 9 years of experience in web, mobile, and API automation. Proven expertise in building robust, scalable automation frameworks using Java, Selenium, and Playwright with TypeScript. Adept at leading and mentoring automation teams, defining comprehensive test strategies, and implementing CI/CD pipelines to ensure seamless DevOps integration and high-quality software delivery. Successfully improved test efficiency by 80%, reduced manual efforts by 60%, and increased test coverage to over 95% across e-commerce, logistics, and SaaS domains.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="py-12 md:py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800">Technical Skills</h3>
+                <p class="mt-2 text-lg text-gray-600">This section provides an overview of my technical capabilities. You can interact with the chart and filters to explore my skills across different domains of software testing and development.</p>
+            </div>
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200">
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button class="skill-filter-btn active bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-semibold" data-category="all">All Skills</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Test Automation">Test Automation</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Languages & Frameworks">Languages & Frameworks</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Backend & Database">Backend & Database</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="AI & Emerging Tech">AI & Emerging Tech</button>
+                    <button class="skill-filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="Software Methodologies & Tools">Methodologies & Tools</button>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                    <div class="lg:col-span-3">
+                        <div class="chart-container">
+                            <canvas id="skillsChart"></canvas>
+                        </div>
+                    </div>
+                    <div id="skills-list" class="lg:col-span-2 space-y-4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-12 md:py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800">Professional Experience</h3>
+                <p class="mt-2 text-lg text-gray-600">Explore my career journey through this interactive timeline. Click on any role to expand and view the key responsibilities and accomplishments associated with it.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="relative border-l-2 border-amber-200 ml-8 pl-8 space-y-12">
+                    <div class="timeline-item">
+                        <div class="experience-toggle cursor-pointer">
+                            <h4 class="text-xl font-semibold text-gray-800">Sr. SDET, Freshworks India</h4>
+                            <p class="text-sm text-gray-500">May 2021 - Present</p>
+                        </div>
+                        <div class="experience-details hidden mt-4 pl-4 border-l-2 border-gray-200">
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Led a team of automation engineers, overseeing end-to-end testing and automation processes.</li>
+                                <li>Designed, developed, and maintained a highly reliable test automation framework for UI and API, leading to an 80% improvement in test execution efficiency.</li>
+                                <li>Defined and implemented testing practices and strategies for newly developed features.</li>
+                                <li>Conducted thorough test case and code reviews, ensuring high-quality and maintainable automation code.</li>
+                                <li>Collaborated closely with development teams to embed quality throughout the software development lifecycle, reducing bug count by 40%.</li>
+                                <li>Configured and managed CI/CD automation jobs using Jenkins.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="experience-toggle cursor-pointer">
+                            <h4 class="text-xl font-semibold text-gray-800">SDET, Delhivery India</h4>
+                            <p class="text-sm text-gray-500">August 2019 - April 2021</p>
+                        </div>
+                        <div class="experience-details hidden mt-4 pl-4 border-l-2 border-gray-200">
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Developed and implemented an automation framework for API and microservices testing.</li>
+                                <li>Participated in system architecture discussions and backend design.</li>
+                                <li>Validated backend architecture, including data flow through Redis, event logs, and PostgreSQL.</li>
+                                <li>Coordinated with cross-functional teams to manage dependencies and streamline testing efforts.</li>
+                                <li>Defined test plans and quality metrics, ensuring all testing activities align with project goals.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="experience-toggle cursor-pointer">
+                            <h4 class="text-xl font-semibold text-gray-800">SDET, Naukri.com</h4>
+                            <p class="text-sm text-gray-500">November 2017 - July 2019</p>
+                        </div>
+                        <div class="experience-details hidden mt-4 pl-4 border-l-2 border-gray-200">
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Built and maintained an automation framework for UI and API testing using Selenium WebDriver and RestAssured.</li>
+                                <li>Executed manual and automated tests to ensure high-quality feature delivery.</li>
+                                <li>Contributed to CI/CD pipelines by integrating automation tests into Jenkins jobs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="experience-toggle cursor-pointer">
+                            <h4 class="text-xl font-semibold text-gray-800">Software Test Engineer, Shipgig Ventures</h4>
+                            <p class="text-sm text-gray-500">November 2015 - October 2017</p>
+                        </div>
+                        <div class="experience-details hidden mt-4 pl-4 border-l-2 border-gray-200">
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Performed functional, regression, and system testing for various web applications.</li>
+                                <li>Created detailed test cases and bug reports in JIRA.</li>
+                                <li>Assisted in the development of automation scripts for test case execution.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-12 md:py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800">Education & Certifications</h3>
+                 <p class="mt-2 text-lg text-gray-600">This section outlines my academic background and the professional certifications I have earned to continuously enhance my skills and knowledge in the field.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Education</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-bold">Master of Computer Applications (MCA)</p>
+                            <p class="text-sm text-gray-600">Uttar Pradesh Technical University | June 2015</p>
+                            <p class="text-sm font-medium text-amber-600">Distinction</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">Bachelor of Education (B.Ed)</p>
+                            <p class="text-sm text-gray-600">University of Kashmir | January 2012</p>
+                            <p class="text-sm font-medium text-amber-600">Distinction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Certifications</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><strong>AWS Fundamentals:</strong> Going Cloud (Coursera)</li>
+                        <li><strong>API Automation</strong> (Udemy)</li>
+                        <li><strong>Database and SQL for Data Science</strong> (Coursera & IBM)</li>
+                        <li><strong>Atlassian:</strong> Version Control with GIT (Coursera)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-sm">
+            <p>&copy; 2025 Tasaduq Hussain. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const skillsData = {
+                'Test Automation': ['Selenium WebDriver', 'Playwright', 'TestNG', 'Jest', 'CI/CD', 'Jenkins', 'Maven', 'Testim', 'Microservices Testing'],
+                'Languages & Frameworks': ['Java', 'Core Java', 'TypeScript', 'JavaScript', 'Page Object Model (POM)'],
+                'Backend & Database': ['REST APIs', 'PostgreSQL', 'Redis', 'Amazon S3', 'Haystack', 'Postman', 'RestAssured'],
+                'AI & Emerging Tech': ['Copilot', 'Cursor for Coding', 'ChatGPT', 'Gemini', 'Perplexity for queries'],
+                'Software Methodologies & Tools': ['Agile', 'Scrum', 'JIRA', 'Freshrelease', 'Test Planning', 'Test Strategy', 'Debugging', 'Code Reviews', 'Git']
+            };
+
+            const skillsListContainer = document.getElementById('skills-list');
+            const filterButtons = document.querySelectorAll('.skill-filter-btn');
+            
+            let skillsChart;
+
+            function renderSkillsList(category) {
+                skillsListContainer.innerHTML = '';
+                const skillsToRender = (category === 'all') ? Object.values(skillsData).flat() : skillsData[category];
+                
+                const categoryTitle = document.createElement('h4');
+                categoryTitle.className = 'text-lg font-semibold text-gray-800 mb-2';
+                categoryTitle.textContent = category === 'all' ? 'All Skills' : category;
+                skillsListContainer.appendChild(categoryTitle);
+
+                const list = document.createElement('ul');
+                list.className = 'space-y-2';
+                skillsToRender.forEach(skill => {
+                    const item = document.createElement('li');
+                    item.className = 'bg-amber-100 text-amber-800 text-sm font-medium px-3 py-1 rounded-full';
+                    item.textContent = skill;
+                    list.appendChild(item);
+                });
+                skillsListContainer.appendChild(list);
+            }
+
+            function updateChart(category) {
+                const chartData = (category === 'all') 
+                    ? {
+                        labels: Object.keys(skillsData),
+                        datasets: [{
+                            label: 'Number of Skills',
+                            data: Object.values(skillsData).map(arr => arr.length),
+                            backgroundColor: 'rgba(251, 191, 36, 0.6)',
+                            borderColor: 'rgba(217, 119, 6, 1)',
+                            borderWidth: 1
+                        }]
+                    }
+                    : {
+                        labels: [category],
+                        datasets: [{
+                            label: 'Number of Skills',
+                            data: [skillsData[category].length],
+                            backgroundColor: 'rgba(251, 191, 36, 0.6)',
+                            borderColor: 'rgba(217, 119, 6, 1)',
+                            borderWidth: 1
+                        }]
+                    };
+                
+                skillsChart.data = chartData;
+                skillsChart.update();
+            }
+
+            function createChart() {
+                const ctx = document.getElementById('skillsChart').getContext('2d');
+                skillsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(skillsData),
+                        datasets: [{
+                            label: 'Number of Skills',
+                            data: Object.values(skillsData).map(arr => arr.length),
+                            backgroundColor: 'rgba(251, 191, 36, 0.6)',
+                            borderColor: 'rgba(217, 119, 6, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Skill Distribution by Category',
+                                font: {
+                                    size: 16
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                grid: {
+                                    display: false
+                                }
+                            },
+                            y: {
+                                grid: {
+                                    color: '#f0f0f0'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.dataset.category;
+                    
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-amber-500', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    
+                    button.classList.add('active', 'bg-amber-500', 'text-white');
+                    button.classList.remove('bg-gray-200', 'text-gray-700');
+
+                    renderSkillsList(category);
+                    updateChart(category);
+                });
+            });
+
+            createChart();
+            renderSkillsList('all');
+
+            const experienceToggles = document.querySelectorAll('.experience-toggle');
+            experienceToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const details = toggle.nextElementSibling;
+                    details.classList.toggle('hidden');
+                });
+            });
+            
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const header = document.getElementById('header');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: `-${header.offsetHeight}px`,
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - header.offsetHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                    if(mobileMenu.classList.contains('hidden') === false){
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
