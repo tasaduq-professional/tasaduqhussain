@@ -1,152 +1,160 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasaduq Hussain - SDET Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-8 font-sans antialiased text-gray-800">
 
-const App = () => {
-  return (
-    <div className="bg-gray-100 min-h-screen p-8 font-sans antialiased text-gray-800">
-      <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-        {/* Header */}
-        <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 md:p-12 text-center">
-          <div className="flex items-center justify-center">
-            <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-blue-600 font-bold text-4xl shadow-md">TH</div>
-            <div className="ml-6 text-left">
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">Tasaduq Hussain</h1>
-              <p className="text-lg md:text-xl mt-2">Aspiring Lead Software Development Engineer in Test (SDET)</p>
-            </div>
-          </div>
-          <p className="mt-4 text-sm md:text-base text-gray-200">
-            Delhi, India | tasaduq12hussain14@gmail.com | +919971260124 | 
-            <a href="https://www.linkedin.com/in/tasaduq-hussain" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">LinkedIn</a>
-          </p>
-        </header>
-
-        <main className="p-8 md:p-12">
-          {/* Professional Summary */}
-          <section className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Professional Summary</h2>
-            <p className="text-base leading-relaxed text-gray-700">
-              Results-driven SDET Lead with over 9 years of experience in leading and mentoring teams, devising robust test strategies, and implementing comprehensive full-stack automation frameworks. Extensive expertise in Java-based automation, CI/CD pipelines, and cloud testing, including the integration of AI capabilities for enhanced test intelligence and efficiency across various domains including SaaS, e-commerce, and logistics. Demonstrated success in enhancing test efficiency by **80%**, stabilizing automation reliability to **95%**, and reducing manual testing efforts by **92%** across multiple projects. Proficient in assuming end-to-end quality ownership, integrating DevOps practices, and delivering high-quality software with a record of zero production defects.
-            </p>
-          </section>
-
-          {/* Skills Section */}
-          <section className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Skills</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <SkillCard title="Test Automation" skills="Selenium WebDriver, TestNG, Testim, POM, Jenkins, Maven, REST Assured, Postman, Playwright, Katalon Studio" />
-              <SkillCard title="Programming" skills="Java, Core Java, DSA, JavaScript, Python, TypeScript, Ruby" />
-              <SkillCard title="CI/CD & Deployment" skills="Jenkins, System Deployment, Framework Development, CI/CD Automation, Docker, Kubernetes" />
-              <SkillCard title="Backend & Database" skills="PostgreSQL, Redis, Amazon S3, Haystack, Teleport, AWS, GCP, DynamoDB, SQL" />
-              <SkillCard title="Testing & Management" skills="JIRA, Freshrelease, Agile/Scrum, API Testing, Performance Testing, Cloud Automation, Mobile Testing, Database Testing, Security Testing, Functional Testing, Regression Testing, Smoke Testing, Sanity Testing, User Acceptance Testing, Test Planning, Debugging, Test Strategy" />
-              <SkillCard title="AI & Emerging Tech" skills="ChatGPT, Gemini, Perplexity, GitHub Copilot, Cursor, Artificial Intelligence (AI)" />
-              <SkillCard title="Technical Architecture" skills="Page Object Model (POM), Selenium Framework, Allure, ExtentReports, Custom Reporting" />
-              <SkillCard title="Tools & Utilities" skills="Git, GitLab, Bitbucket, Testlink, Chrome DevTools, AWS CloudWatch, AWS Lambda, Athena, Newmonk" />
-            </div>
-          </section>
-
-          {/* Experience Section */}
-          <section className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Professional Experience</h2>
-            <ExperienceItem
-              company="Freshworks India"
-              role="Sr. Software Development Engineer in Test"
-              duration="May 2021 - Present"
-              bullets={[
-                "Developed a Playwright framework from scratch for API and UI automation, now adopted by 8 scrum teams for new epic automation.",
-                "Migrated 3000 Testim UI test cases to the Playwright framework, reducing execution time from 2 days to 4 hours, a **92% reduction**.",
-                "Managed and configured test environments with developers to mirror production and staging, improving quality and reducing testing efforts by **23%**.",
-                "Stabilized regression automation API cases, increasing their reliability from 43% to 95%, which improved team velocity and reduced manual verification efforts by 95% for regression.",
-                "Completed a record of 21 epics in one year, contributing to a 4% increase in total revenue and accruing 611 new customers.",
-                "Led Blue/Green deployment mechanisms for multiple products, including Freshchat, FreshBots, and Freshdesk.",
-                "Contributed to Testim UI automation by automating a high number of test cases and developing reusable features."
-              ]}
-            />
-             <ExperienceItem
-              company="Delhivery India"
-              role="Sr. Software Development Engineer in Test"
-              duration="August 2019 - April 2021 (1 year 9 months)"
-              bullets={[
-                "Successfully released a B2B project for first mile, last mile, and billing with zero bugs on production, which increased the delivery process efficiency by **7%**.",
-                "Developed a UI automation framework using Selenium with Java and the Page Object Model (POM), automating 5300 test cases and reducing manual verification by **92%**.",
-                "Performed API testing and automation using REST Assured and Postman for microservices."
-              ]}
-            />
-            <ExperienceItem
-              company="Naukri.com"
-              role="Sr. Software Test Engineer"
-              duration="November 2017 - July 2019 (1 year 9 months)"
-              bullets={[
-                "Created a reusable JAR file for headless browser testing, which was adopted for all production environments across Firstnaukri, Naukri, and 99acres.",
-                "Developed an end-to-end test automation suite for the Resume maker product using Selenium, TestNG, and REST Assured, achieving **85% test coverage** for Firstnaukri product."
-              ]}
-            />
-            <ExperienceItem
-              company="Shipgig Ventures Private Limited"
-              role="Software Tester"
-              duration="November 2015 - October 2017 (2 years)"
-              bullets={[
-                "Automated **350 new test cases** within the existing framework, increasing overall automation coverage by **16%**.",
-                "Provided testing training to new online students who were selected to join the company, and they proved to be excellent contributors."
-              ]}
-            />
-          </section>
-
-          {/* Education & Certifications */}
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Education</h2>
-              <EducationItem
-                degree="Master of Computer Applications (MCA), Distinction"
-                school="Uttar Pradesh Technical University"
-                date="June 2015"
-              />
-              <EducationItem
-                degree="Bachelors of Education (B.Ed), Distinction"
-                school="University of Kashmir"
-                date="January 2012"
-              />
-            </div>
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Certifications</h2>
-              <ul className="list-disc pl-5 text-base text-gray-700 space-y-2">
-                <li>AWS Fundamentals: Going Cloud (Coursera)</li>
-                <li>API Automation (Udemy)</li>
-                <li>Database and SQL for Data Science (Coursera & IBM)</li>
-                <li>Atlassian: Version Control with GIT (Coursera)</li>
-              </ul>
-            </div>
-          </section>
-        </main>
+  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 md:p-12 text-center">
+      <div class="flex items-center justify-center">
+        <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center text-blue-600 font-bold text-4xl shadow-md">TH</div>
+        <div class="ml-6 text-left">
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Tasaduq Hussain</h1>
+          <p class="text-lg md:text-xl mt-2">Aspiring Lead Software Development Engineer in Test (SDET)</p>
+        </div>
       </div>
-    </div>
-  );
-};
+      <p class="mt-4 text-sm md:text-base text-gray-200">
+        Delhi, India | tasaduq12hussain14@gmail.com | +919971260124 | 
+        <a href="https://www.linkedin.com/in/tasaduq-hussain" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">LinkedIn</a>
+      </p>
+    </header>
 
-const SkillCard = ({ title, skills }) => (
-  <div className="bg-white rounded-lg p-6 shadow-md transition-transform transform hover:scale-105">
-    <h3 className="text-lg font-semibold text-indigo-600 mb-2">{title}</h3>
-    <p className="text-sm text-gray-600">{skills}</p>
+    <main class="p-8 md:p-12">
+      <!-- Professional Summary -->
+      <section class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Professional Summary</h2>
+        <p class="text-base leading-relaxed text-gray-700">
+          Results-driven SDET Lead with over 9 years of experience in leading and mentoring teams, devising robust test strategies, and implementing comprehensive full-stack automation frameworks. Extensive expertise in Java-based automation, CI/CD pipelines, and cloud testing, including the integration of AI capabilities for enhanced test intelligence and efficiency across various domains including SaaS, e-commerce, and logistics. Demonstrated success in enhancing test efficiency by **80%**, stabilizing automation reliability to **95%**, and reducing manual testing efforts by **92%** across multiple projects. Proficient in assuming end-to-end quality ownership, integrating DevOps practices, and delivering high-quality software with a record of zero production defects.
+        </p>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Skills</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg p-6 shadow-md transition-transform transform hover:scale-105">
+            <h3 class="text-lg font-semibold text-indigo-600 mb-2">Test Automation</h3>
+            <p class="text-sm text-gray-600">Selenium WebDriver, TestNG, Testim, POM, Jenkins, Maven, REST Assured, Postman, Playwright, Katalon Studio</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-md transition-transform transform hover:scale-105">
+            <h3 class="text-lg font-semibold text-indigo-600 mb-2">Programming</h3>
+            <p class="text-sm text-gray-600">Java, Core Java, DSA, JavaScript, Python, TypeScript, Ruby</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-md transition-transform transform hover:scale-105">
+            <h3 class="text-lg font-semibold text-indigo-600 mb-2">CI/CD & Deployment</h3>
+            <p class="text-sm text-gray-600">Jenkins, System Deployment, Framework Development, CI/CD Automation, Docker, Kubernetes</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-md transition-transform transform hover:scale-105">
+            <h3 class="text-lg font-semibold text-indigo-600 mb-2">Backend & Database</h3>
+            <p class="text-sm text-gray-600">PostgreSQL, Redis, Amazon S3, Haystack, Teleport, AWS, GCP, DynamoDB, SQL</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-md transition-transform transform hover:scale-105">
+            <h3 class="text-lg font-semibold text-indigo-600 mb-2">Testing & Management</h3>
+            <p class="text-sm text-gray-600">JIRA, Freshrelease, Agile/Scrum, API Testing, Performance Testing, Cloud Automation, Mobile Testing, Database Testing, Security Testing, Functional Testing, Regression Testing, Smoke Testing, Sanity Testing, User Acceptance Testing, Test Planning, Debugging, Test Strategy</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-md transition-transform transform hover:scale-105">
+            <h3 class="text-lg font-semibold text-indigo-600 mb-2">AI & Emerging Tech</h3>
+            <p class="text-sm text-gray-600">ChatGPT, Gemini, Perplexity, GitHub Copilot, Cursor, Artificial Intelligence (AI)</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-md transition-transform transform hover:scale-105">
+            <h3 class="text-lg font-semibold text-indigo-600 mb-2">Technical Architecture</h3>
+            <p class="text-sm text-gray-600">Page Object Model (POM), Selenium Framework, Allure, ExtentReports, Custom Reporting</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-md transition-transform transform hover:scale-105">
+            <h3 class="text-lg font-semibold text-indigo-600 mb-2">Tools & Utilities</h3>
+            <p class="text-sm text-gray-600">Git, GitLab, Bitbucket, Testlink, Chrome DevTools, AWS CloudWatch, AWS Lambda, Athena, Newmonk</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Professional Experience</h2>
+        
+        <div class="mb-6">
+          <h3 class="text-lg md:text-xl font-bold text-blue-600">Freshworks India</h3>
+          <p class="text-sm text-gray-500">Sr. Software Development Engineer in Test | May 2021 - Present</p>
+          <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-700">
+            <li>Developed a Playwright framework from scratch for API and UI automation, now adopted by 8 scrum teams for new epic automation.</li>
+            <li>Migrated 3000 Testim UI test cases to the Playwright framework, reducing execution time from 2 days to 4 hours, a **92% reduction**.</li>
+            <li>Managed and configured test environments with developers to mirror production and staging, improving quality and reducing testing efforts by **23%**.</li>
+            <li>Stabilized regression automation API cases, increasing their reliability from 43% to 95%, which improved team velocity and reduced manual verification efforts by 95% for regression.</li>
+            <li>Completed a record of 21 epics in one year, contributing to a 4% increase in total revenue and accruing 611 new customers.</li>
+            <li>Led Blue/Green deployment mechanisms for multiple products, including Freshchat, FreshBots, and Freshdesk.</li>
+            <li>Contributed to Testim UI automation by automating a high number of test cases and developing reusable features.</li>
+          </ul>
+        </div>
+        
+        <div class="mb-6">
+          <h3 class="text-lg md:text-xl font-bold text-blue-600">Delhivery India</h3>
+          <p class="text-sm text-gray-500">Sr. Software Development Engineer in Test | August 2019 - April 2021 (1 year 9 months)</p>
+          <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-700">
+            <li>Successfully released a B2B project for first mile, last mile, and billing with zero bugs on production, which increased the delivery process efficiency by **7%**.</li>
+            <li>Developed a UI automation framework using Selenium with Java and the Page Object Model (POM), automating 5300 test cases and reducing manual verification by **92%**.</li>
+            <li>Performed API testing and automation using REST Assured and Postman for microservices.</li>
+          </ul>
+        </div>
+        
+        <div class="mb-6">
+          <h3 class="text-lg md:text-xl font-bold text-blue-600">Naukri.com</h3>
+          <p class="text-sm text-gray-500">Sr. Software Test Engineer | November 2017 - July 2019 (1 year 9 months)</p>
+          <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-700">
+            <li>Created a reusable JAR file for headless browser testing, which was adopted for all production environments across Firstnaukri, Naukri, and 99acres.</li>
+            <li>Developed an end-to-end test automation suite for the Resume maker product using Selenium, TestNG, and REST Assured, achieving **85% test coverage** for Firstnaukri product.</li>
+          </ul>
+        </div>
+        
+        <div class="mb-6">
+          <h3 class="text-lg md:text-xl font-bold text-blue-600">Shipgig Ventures Private Limited</h3>
+          <p class="text-sm text-gray-500">Software Tester | November 2015 - October 2017 (2 years)</p>
+          <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-700">
+            <li>Automated **350 new test cases** within the existing framework, increasing overall automation coverage by **16%**.</li>
+            <li>Provided testing training to new online students who were selected to join the company, and they proved to be excellent contributors.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education & Certifications -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Education</h2>
+          <div class="mb-4">
+            <h3 class="text-lg font-bold text-gray-700">Master of Computer Applications (MCA), Distinction</h3>
+            <p class="text-sm text-gray-600">Uttar Pradesh Technical University</p>
+            <p class="text-xs text-gray-400 mt-1">June 2015</p>
+          </div>
+          <div class="mb-4">
+            <h3 class="text-lg font-bold text-gray-700">Bachelors of Education (B.Ed), Distinction</h3>
+            <p class="text-sm text-gray-600">University of Kashmir</p>
+            <p class="text-xs text-gray-400 mt-1">January 2012</p>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-700 border-b-2 border-indigo-300 pb-2 mb-4">Certifications</h2>
+          <ul class="list-disc pl-5 text-base text-gray-700 space-y-2">
+            <li>AWS Fundamentals: Going Cloud (Coursera)</li>
+            <li>API Automation (Udemy)</li>
+            <li>Database and SQL for Data Science (Coursera & IBM)</li>
+            <li>Atlassian: Version Control with GIT (Coursera)</li>
+          </ul>
+        </div>
+      </section>
+    </main>
   </div>
-);
-
-const ExperienceItem = ({ company, role, duration, bullets }) => (
-  <div className="mb-6">
-    <h3 className="text-lg md:text-xl font-bold text-blue-600">{company}</h3>
-    <p className="text-sm text-gray-500">{role} | {duration}</p>
-    <ul className="list-disc pl-5 mt-2 space-y-1 text-gray-700">
-      {bullets.map((bullet, index) => (
-        <li key={index} dangerouslySetInnerHTML={{ __html: bullet }} className="text-base" />
-      ))}
-    </ul>
-  </div>
-);
-
-const EducationItem = ({ degree, school, date }) => (
-  <div className="mb-4">
-    <h3 className="text-lg font-bold text-gray-700">{degree}</h3>
-    <p className="text-sm text-gray-600">{school}</p>
-    <p className="text-xs text-gray-400 mt-1">{date}</p>
-  </div>
-);
-
-export default App;
+</body>
+</html>
